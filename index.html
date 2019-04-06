@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/png" href="img/icon.png" />
+    <title>OneArmedBandit.js</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="Modal.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="header">OneArmedBandit.js</h1>
+        <div class="boards">
+            <div class="board"></div>
+            <div class="board"></div>
+            <div class="board"></div>
+        </div>
+        <div class="bid-form">
+            <div class="bid-chbox">
+                <label for="keep-bid">Keep bid</label>
+                <input type="checkbox" name="keep-bid" id="keep-bid">
+            </div>
+
+            <input type="number" min="1" max="10000" id="bid-input" placeholder="How much to bet...">
+
+            <button id="bid-btn">Spin</button>
+
+            <p class="bid-msg"></p>
+        </div>
+        <div class="game-result">
+            <p class="after-game"></p>
+            <p>Your funds before next spinning: <span id="funds"></span> <strong>tokens</strong></p>
+        </div>
+        <div class="statistics">
+            <h2 class="stats">Statistics</h2>
+            <ul>
+                <li><i class="fas fa-trophy"></i>
+                    <span class="label">Wins</span>
+                    <span class="stats-wins"></span></li>
+                <li><i class="fas fa-skull-crossbones"></i>
+                    <span class="label">Losses</span>
+                    <span class="stats-losses"></span></li>
+                <li><i class="fas fa-th-list"></i>
+                    <span class="label">Total games</span><span class="stats-total"></span></li>
+                <li><i class="fas fa-dollar-sign"></i>
+                    <span class="label">Turnover</span>
+                    <span class="stats-turnover"></span></li>
+            </ul>
+        </div>
+    </div>
+    <div class="account" data-modal-toggler="account">
+        <span>
+            <i class="fas fa-coins"></i>
+            <span class="account-funds"></span>
+        </span>
+        <i class="fas fa-expand show-account-btn"></i>
+    </div>
+
+    <div class="modal-box account-modal-box" data-modal-name="account">
+        <div id="account-content"></div>
+    </div>
+
+    <div class="hidden-images">
+        <img src="img/red.png">
+        <img src="img/green.png">
+        <img src="img/blue.png">
+    </div>
+
+    <script src="Wallet.js"></script>
+    <script src="Statistics.js"></script>
+    <script src="Draw.js"></script>
+    <script src="Result.js"></script>
+    <script src="Modal.js"></script>
+    <script src="Game.js"></script>
+    <script>
+        const game = new Game(100);
+    </script>
+</body>
+
+</html>
