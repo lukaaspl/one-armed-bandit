@@ -9,7 +9,7 @@ class Modal {
         this.modals = [{
             modalTitle: "title",
             modalContent: "content"
-        }, ];
+        },];
 
         this.modalsToggler();
         this.drawUI();
